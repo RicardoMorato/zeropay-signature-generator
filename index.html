@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main-section.css">
+  <title>Zeropay signature generator</title>
+</head>
+<body>
+  <main>
+    <h1>Gerador de assinaturas da Zeropay</h1>
+    <form>
+      <input type="text" name="name" placeholder="Nome e sobrenome">
+      <input type="text" name="role" placeholder="Cargo">
+      <input type="email" name="email" placeholder="E-mail">
+      <input type="tel" name="phone" placeholder="Telefone">
+    </form>
+    <div class="signature-content">
+      <p>Atenciosamente,</p>
+      <table class="signature-table">
+        <tr>
+          <td>
+            <img
+              src="./assets/logo_zeropay.png"
+              alt="Logo Zeropay"
+              class="logo-zeropay"
+              >
+          </td>
+          <td>
+            <div>
+              <span class="name" id="name">Ricardo Morato</span>
+            </div>
+
+            <div>
+              <span class="function" id="role">Developer</span>
+            </div>
+
+            <div>
+              <span class="email" id="email">ricardo@zeropay.io</span>
+            </div>
+
+            <div>
+              <span class="phone" id="phone">+55 81 99841-5938</span>
+            </div>
+            <div>
+              <a href="http://www.zeropay.io" class="zeropay-site">zeropay.io</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

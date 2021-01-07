@@ -16,7 +16,7 @@ body {
   font-size: 0.75rem;
 }
 
-main {
+section {
   height: 75%;
   width: 75%;
   border: 1px solid grey;
@@ -29,6 +29,15 @@ main {
   padding: 10px;
 }
 
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
 form {
   height: 60%;
   width: 60%;
@@ -39,6 +48,7 @@ form {
 
 h1 {
   margin: 10px;
+  font-size: 1.5rem;
 }
 
 input {

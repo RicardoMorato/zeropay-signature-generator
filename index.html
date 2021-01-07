@@ -4,52 +4,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main-section.css">
+  <link rel="stylesheet" href="copy-instructions.css">
   <title>Zeropay signature generator</title>
 </head>
 <body>
-  <main>
-    <h1>Gerador de assinaturas da Zeropay</h1>
-    <form>
-      <input type="text" name="name" placeholder="Nome e sobrenome">
-      <input type="text" name="role" placeholder="Cargo">
-      <input type="email" name="email" placeholder="E-mail">
-      <input type="tel" name="phone" placeholder="Telefone">
-    </form>
-    <div class="signature-content">
-      <p>Atenciosamente,</p>
-      <table class="signature-table">
-        <tr>
-          <td>
-            <img
-              src="./assets/logo_zeropay.png"
-              alt="Logo Zeropay"
-              class="logo-zeropay"
-              >
-          </td>
-          <td>
-            <div>
-              <span class="name" id="name">Ricardo Morato</span>
-            </div>
+  <section>
+    <main>
+      <h1>Gerador de assinaturas da Zeropay</h1>
+      <form>
+        <input type="text" name="name" placeholder="Nome e sobrenome">
+        <input type="text" name="role" placeholder="Cargo">
+        <input type="email" name="email" placeholder="E-mail">
+        <input type="tel" name="phone" placeholder="Telefone">
+      </form>
+      <div class="signature-content">
+        <p>Atenciosamente,</p>
+        <table class="signature-table">
+          <tr>
+            <td>
+              <img
+                src="./assets/logo_zeropay.png"
+                alt="Logo Zeropay"
+                class="logo-zeropay"
+                >
+            </td>
+            <td>
+              <div>
+                <span class="name" id="name">Ricardo Morato</span>
+              </div>
 
-            <div>
-              <span class="role" id="role">Developer</span>
-            </div>
+              <div>
+                <span class="role" id="role">Developer</span>
+              </div>
 
-            <div>
-              <span class="email" id="email">ricardo@zeropay.io</span>
-            </div>
+              <div>
+                <span class="email" id="email">ricardo@zeropay.io</span>
+              </div>
 
-            <div>
-              +55 <span class="phone" id="phone">81 99841-5938</span>
-            </div>
-            <div>
-              <a href="http://www.zeropay.io" class="zeropay-site">zeropay.io</a>
-            </div>
-          </td>
-        </tr>
-      </table>
+              <div>
+                +55 <span class="phone" id="phone">81 99841-5938</span>
+              </div>
+              <div>
+                <a href="http://www.zeropay.io" class="zeropay-site">zeropay.io</a>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </main>
+
+    <div style="display: none" id="finish">
+      <button
+        class="copy-button"
+        data-clipboard-target="#signature-content">
+        Copiar
+      </button>
+      <ol id="instructions">
+        <li>Ao acessar o Gmail, clique na engrenagem no canto superior
+          direito e depois clique em
+
+          <a href="https://mail.google.com/mail/u/0/#settings/general">
+            Configurações.
+          </a>
+        </li>
+        <li>
+          Na tela principal, role para a seção de
+          <strong>Assinatura</strong> e lá
+          simplesmente cole a assinatura, depois, clique em
+          <strong>Salvar Alterações</strong>.
+        </li>
+      </ol>
     </div>
-  </main>
+    <div id="message" class="success-message hidden">Assinatura copiada
+      com sucesso!
+      <button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59
+          6.41 5 5 6.41 10.59 12 5 17.59 6.41
+          19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          <path d="M0 0h24v24H0z" fill="none"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  </section>
 
   <script src="./main.js"></script>
 </body>

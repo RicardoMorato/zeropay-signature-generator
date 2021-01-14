@@ -10,8 +10,6 @@
   color: white;
   cursor: pointer;
   border-radius: 2em;
-  min-height: 35px;
-  height: 35px;
 }
 
 .copy-button:hover {

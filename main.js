@@ -5,10 +5,15 @@ const userEmailInput = document.querySelector('input[name="email"]');
 const userPhoneInput = document.querySelector('input[name="phone"]');
 
 // Outputs
-const userNameOutput = document.querySelector('.name');
-const userRoleOutput = document.querySelector('.role');
-const userEmailOutput = document.querySelector('.email');
-const userPhoneOutput = document.querySelector('.phone');
+const name = document.querySelector('.name');
+const role = document.querySelector('.role');
+const email = document.querySelector('.email');
+const phone = document.querySelector('.phone');
+
+// Copy actions/instructions
+const copyInstructions = document.querySelector('#finish');
+const copyButton = document.querySelector('.copy-button');
+const clipboard = new ClipboardJS('.copy-button');
 
 // Helper constants
 const isFieldValid = {
@@ -18,11 +23,19 @@ const isFieldValid = {
   phone: false,
 };
 
+const body = {
+  name: '',
+  role: '',
+  email: '',
+  phone: '',
+}
+
 const updateValue = (e, output) => {
   output.textContent = e.target.value;
+  body[output.classList[0]] = output.textContent;
   const isValid = validateInputFields(output.classList[0], e.target.value);
 
-  // if (isValid)
+  if (isValid) copyInstructions.style.display = "flex";
 };
 
 const handleInputAddEventListener = (input, output) => {
@@ -42,7 +55,18 @@ const validateInputFields = (key, content) => {
   return false;
 };
 
-handleInputAddEventListener(userNameInput, userNameOutput)
-handleInputAddEventListener(userRoleInput, userRoleOutput)
-handleInputAddEventListener(userEmailInput, userEmailOutput)
-handleInputAddEventListener(userPhoneInput, userPhoneOutput)
+const copyTextToClipboard = (text) => {
+  navigator.clipboard.writeText(text).then(() => console.log('Copiado com sucesso!'));
+};
+
+clipboard.on('success', () => {
+  copyButton.style['background-color'] = "#00ff00";
+  copyButton.style['border'] = "none";
+  copyButton.style['color'] = "black";
+  copyButton.textContent = "Assinatura copiada com sucesso!";
+});
+
+handleInputAddEventListener(userNameInput, name);
+handleInputAddEventListener(userRoleInput, role);
+handleInputAddEventListener(userEmailInput, email);
+handleInputAddEventListener(userPhoneInput, phone);
